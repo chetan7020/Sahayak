@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Name"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/userEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Email" />
+
+    <TextView
+        android:id="@+id/adminEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Admin Email" />
+
+    <TextView
+        android:id="@+id/isVolunteer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Is Volunteer" />
+
+    <TextView
+        android:id="@+id/locationDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location Details" />
+</LinearLayout>
