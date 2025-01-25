@@ -1,0 +1,96 @@
+package com.example.saftytracking.notification;
+
+import static android.content.Context.MODE_PRIVATE;
+
+
+import android.app.Notification;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.example.saftytracking.R;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link AllFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class AllFragment extends Fragment {
+
+    private RecyclerView recyclerView;
+    private NotificationAdapter adapter;
+    private List<NotificationModel> notificationList;
+
+    public AllFragment() {
+        // Required empty public constructor
+    }
+
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_all, container, false);
+
+        // Initialize RecyclerView and data
+        recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        // Initialize data and adapter
+        notificationList = new ArrayList<>();
+        adapter = new NotificationAdapter(notificationList,getContext());
+        recyclerView.setAdapter(adapter);
+
+        // Load dummy data
+        loadNotifications();
+
+        return view;
+    }
+
+    private void loadNotifications() {
+        SharedPreferences prefs = getContext().getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        String savedEmail = prefs.getString("userEmail", null);
+        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+        firebaseFirestore.collection(savedEmail+"_sent")
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        if (!queryDocumentSnapshots.isEmpty()) {
+                            for (DocumentSnapshot document : queryDocumentSnapshots.getDocuments()) {
+                                NM sentItem = document.toObject(NM.class);
+//                                sentList.add(sentItem); // Add to the ArrayList
+                                notificationList.add(new NotificationModel(sentItem.getName(), sentItem.getPhoneNumber(), sentItem.getLat(), sentItem.getLang(), sentItem.getLat(), "-"));
+                                adapter.notifyDataSetChanged();
+
+
+                            }
+
+
+                        }
+                    }
+                });
+
+
+
+//        notificationList.add(new NotificationModel("John Doe", "9876543210", 18.5204, 73.8567, 560.0, "Pune, Maharashtra, India"));
+//        notificationList.add(new NotificationModel("Jane Smith", "9123456789", 19.0760, 72.8777, 14.0, "Mumbai, Maharashtra, India"));
+//        notificationList.add(new NotificationModel("Alice Johnson", "9988776655", 28.6139, 77.2090, 213.0, "New Delhi, India"));
+    }
+}

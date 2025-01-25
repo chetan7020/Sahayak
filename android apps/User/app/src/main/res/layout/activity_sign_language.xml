@@ -1,0 +1,140 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Main Content Layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Input Layout with Voice Assistant -->
+        <LinearLayout
+            android:id="@+id/input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_edittext_background">
+
+            <!-- Mic Icon at the start -->
+            <ImageView
+                android:id="@+id/voice_assistant"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/mic_off"
+                android:contentDescription="Voice Assistant"
+                android:padding="10dp" />
+
+            <!-- Input Text Field -->
+            <EditText
+                android:id="@+id/text_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Type your query"
+                android:padding="10dp"
+                android:textSize="16sp" />
+
+            <!-- Send Button at the end -->
+            <ImageView
+                android:id="@+id/send_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/send"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/black" />
+        </LinearLayout>
+
+        <!-- Progress Bar for Speech Recognition -->
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_centerInParent="true" />
+
+        <!-- WebView for Output -->
+        <WebView
+            android:id="@+id/output_webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/input_layout"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/black" />
+
+    </LinearLayout>
+
+    <!-- Bottom Icons Layout -->
+    <LinearLayout
+        android:id="@+id/bottom_icons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:padding="10dp">
+
+        <!-- First Icon with Label -->
+        <LinearLayout
+            android:id="@+id/signuplanguage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/icon1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/hand"
+                android:contentDescription="Sign Animation"
+                android:padding="3dp" />
+
+            <TextView
+                android:id="@+id/icon1_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:paddingTop="3dp" />
+        </LinearLayout>
+
+        <!-- Second Icon with Label -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/notification_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/notification"
+                android:contentDescription="Notification"
+                android:padding="3dp" />
+
+            <TextView
+                android:id="@+id/notification_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notifications"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:paddingTop="3dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

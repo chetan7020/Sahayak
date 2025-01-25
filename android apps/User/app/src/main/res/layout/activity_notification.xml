@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<!-- Main Content Layout -->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="60dp"
+    android:orientation="vertical">
+
+    <!-- Other UI components can be added here -->
+
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        tools:context=".notification.Notifications">
+
+
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="15dp">
+
+            <com.google.android.material.tabs.TabLayout
+                android:layout_width="match_parent"
+                app:tabSelectedTextColor="#343341"
+                android:outlineAmbientShadowColor="@color/black"
+                android:outlineSpotShadowColor="@color/black"
+                app:tabTextColor="@color/black"
+                app:tabIndicatorColor="@color/black"
+                app:tabRippleColor="@color/black"
+
+
+                android:layout_height="wrap_content"
+
+                android:contentDescription="@string/app_name"
+
+                android:id="@+id/tab_layout">
+
+                <com.google.android.material.tabs.TabItem
+                    android:outlineSpotShadowColor="@color/black"
+                    android:outlineAmbientShadowColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Upcommings" />
+
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Completed" />
+
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Canceled" />
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/view_pager"
+                android:layout_below="@id/tab_layout" />
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
+
+<!-- Bottom Icons Layout -->
+    <LinearLayout
+        android:id="@+id/bottom_icons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:padding="10dp">
+
+        <!-- First Icon with Label -->
+        <LinearLayout
+            android:id="@+id/signup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/icon1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/hand"
+                android:contentDescription="Sign Animation"
+                android:padding="3dp" />
+
+            <TextView
+                android:id="@+id/icon1_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:paddingTop="3dp" />
+        </LinearLayout>
+
+        <!-- Second Icon with Label -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/notification_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/notification"
+                android:contentDescription="Notification"
+                android:padding="3dp" />
+
+            <TextView
+                android:id="@+id/notification_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notifications"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:paddingTop="3dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

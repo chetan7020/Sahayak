@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="button_color">#8BC34A</color> <!-- Light green -->
+    <color name="button_color_dark">#689F38</color> <!-- Dark green -->
+    <color name="button_text">#FFFFFF</color> <!-- White -->
+
+
+    <!--<color name="primaryColor">@color/black</color> &lt;!&ndash; Your desired color &ndash;&gt;-->
+<!--<color name="statusBarColor">#FFFFFFFF</color> &lt;!&ndash; Status bar color &ndash;&gt;-->
+</resources>

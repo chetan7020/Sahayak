@@ -1,0 +1,64 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- TextViews for displaying sensor max values -->
+    <TextView
+        android:id="@+id/accelerationText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Acceleration: 0"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/rotationText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rotation: 0"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/magneticFieldText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Magnetic Field: 0"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/lightText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Light: 0"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/proximityText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Proximity: 0"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/frequencyText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voice: 0"
+        android:textSize="18sp" />
+
+
+
+    <!-- Buttons to start and reset monitoring -->
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Monitoring" />
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reset Monitoring" />
+</LinearLayout>
