@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/styles.css') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename= 'img/favicon.ico') }}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename= 'js/postHandler.js') }}"></script>
+</head>
+
+<body style="background-color: white; margin: 0; font-family: Arial, sans-serif;">
+    <div class="flex-container"
+        style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center;">
+        <div class="left-box"
+            style="width: 90%; max-width: 600px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px; background-color: #f9f9f9;">
+            <h1 id="label" style="font-size: 2rem; color: #333;">N/A</h1>
+            <div id="container" style="margin-top: 10px;"></div>
+        </div>
+    </div>
+
+    <!-- Include Socket.IO Client -->
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"></script>
+
+    <!-- Main JS Script -->
+    <script type="module" src="{{ url_for('static', filename= 'js/main.js') }}"></script>
+</body>
+
+</html>

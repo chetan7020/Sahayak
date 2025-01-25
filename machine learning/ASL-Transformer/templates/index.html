@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>ASL-Transformer</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename= 'css/styles.css') }}">
+	<link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename= 'img/favicon.ico') }}" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="{{ url_for('static', filename= 'js/postHandler.js') }}"></script>
+</head>
+
+<body>
+	<div class="flex-container">
+		<div class="left-box">
+			<h1 id="label">N/A</h1>
+			<div id="container"></div>
+		</div>
+	</div>
+
+	<!-- Include Socket.IO Client -->
+	<script src="https://cdn.socket.io/4.5.0/socket.io.min.js"></script>
+
+	<!-- Main JS Script -->
+	<script type="module" src="{{ url_for('static', filename= 'js/main.js') }}"></script>
+	<form id="inputForm">
+		<textarea id="message" name="message" placeholder="Enter the text to translate here!"></textarea>
+		<button class="light" type="submit" style="margin-left: auto; margin-right:auto;">Submit</button>
+	</form>
+</body>
+
+</html>
